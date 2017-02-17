@@ -1,6 +1,9 @@
 #!/bin/bash
 
-
+#
+# Prior to running this script, start TomEE with:
+# mvn clean install tomee:run
+#
 TESTS=$(ls $PWD/target/*-tests.jar)
 PROPERTIES=$PWD/target/grinder.properties
 echo "

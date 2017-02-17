@@ -21,7 +21,7 @@ tests = {
     "getGreen" : Test(3, "getGreen"),
     }
 
-loadBean = ColorServicePerf("http://localhost:8080/tomee-rest-arquillian-1.0-SNAPSHOT/")
+loadBean = ColorServicePerf("http://localhost:8080/tomee-grinder-starter-1.0-SNAPSHOT/")
 postGreen = tests["postGreen"].wrap(loadBean)
 getGreen = tests["getGreen"].wrap(loadBean)
 getColorObject = tests["getColorObject"].wrap(loadBean)
