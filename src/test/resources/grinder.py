@@ -10,22 +10,21 @@
 
 from net.grinder.script.Grinder import grinder
 from net.grinder.script import Test
-from org.superbiz import Orange
+from org.superbiz import ColorServicePerf
 
 # A shorter alias for the grinder.logger.output() method.
 log = grinder.logger.output
 
 tests = {
-    "ping" : Test(1, "ping"),
-    "add" : Test(2, "add"),
-    "sum" : Test(3, "sum"),
+    "postGreen" : Test(1, "postGreen"),
+    "getColorObject" : Test(2, "getColorObject"),
+    "getGreen" : Test(3, "getGreen"),
     }
 
-loadBean = Orange()
-pingBean = tests["ping"].wrap(loadBean)
-addBean = tests["add"].wrap(loadBean)
-sumBean = tests["sum"].wrap(loadBean)
-
+loadBean = ColorServicePerf("http://localhost:8080/tomee-rest-arquillian-1.0-SNAPSHOT/")
+postGreen = tests["postGreen"].wrap(loadBean)
+getGreen = tests["getGreen"].wrap(loadBean)
+getColorObject = tests["getColorObject"].wrap(loadBean)
 
 # A TestRunner instance is created for each thread. It can be used to
 # store thread-specific data.
@@ -33,6 +32,6 @@ class TestRunner:
 
     # This method is called for every run.
     def __call__(self):
-        pingBean.ping()
-        addBean.add()
-        sumBean.sum()
+        postGreen.postGreen()
+        getGreen.getGreen()
+        getColorObject.getColorObject()

@@ -23,6 +23,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static javax.ejb.LockType.READ;
 import static javax.ejb.LockType.WRITE;
@@ -33,22 +34,22 @@ import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 @Path("/color")
 public class ColorService {
 
-    private String color;
+    private AtomicReference<String> color;
 
     public ColorService() {
-        this.color = "white";
+        this.color = new AtomicReference<>("green");
     }
 
     @GET
     public String getColor() {
-        return color;
+        return color.get();
     }
 
     @Lock(WRITE)
     @Path("{color}")
     @POST
     public void setColor(@PathParam("color") String color) {
-        this.color = color;
+        this.color.getAndSet(color);
     }
 
     @Path("object")

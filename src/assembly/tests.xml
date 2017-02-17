@@ -2,7 +2,7 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
   <!-- TODO: a jarjar format would be better -->
-  <id>jar-with-dependencies</id>
+  <id>tests</id>
   <formats>
     <format>jar</format>
   </formats>
@@ -13,6 +13,18 @@
       <useProjectArtifact>true</useProjectArtifact>
       <unpack>true</unpack>
       <scope>test</scope>
+      <excludes>
+        <exclude>org.apache.cxf:cxf-rt-transports-http</exclude>
+        <exclude>org.apache.cxf:cxf-rt-management</exclude>
+        <exclude>org.apache.cxf:cxf-rt-frontend-jaxrs</exclude>
+        <exclude>org.apache.cxf:cxf-api</exclude>
+        <exclude>org.apache.cxf:cxf-rt-core</exclude>
+        <exclude>org.apache.cxf:cxf-rt-bindings-xml</exclude>
+        <exclude>org.apache.cxf:cxf-rt-rs-extension-providers</exclude>
+        <exclude>org.apache.cxf:cxf-rt-rs-extension-search</exclude>
+        <exclude>org.apache.cxf:cxf-rt-rs-security-cors</exclude>
+        <exclude>org.apache.cxf:cxf-rt-rs-security-oauth2</exclude>
+      </excludes>
     </dependencySet>
   </dependencySets>
 </assembly>
