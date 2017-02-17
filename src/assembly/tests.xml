@@ -14,16 +14,18 @@
       <unpack>true</unpack>
       <scope>test</scope>
       <excludes>
-        <exclude>org.apache.cxf:cxf-rt-transports-http</exclude>
-        <exclude>org.apache.cxf:cxf-rt-management</exclude>
-        <exclude>org.apache.cxf:cxf-rt-frontend-jaxrs</exclude>
-        <exclude>org.apache.cxf:cxf-api</exclude>
-        <exclude>org.apache.cxf:cxf-rt-core</exclude>
-        <exclude>org.apache.cxf:cxf-rt-bindings-xml</exclude>
-        <exclude>org.apache.cxf:cxf-rt-rs-extension-providers</exclude>
-        <exclude>org.apache.cxf:cxf-rt-rs-extension-search</exclude>
-        <exclude>org.apache.cxf:cxf-rt-rs-security-cors</exclude>
-        <exclude>org.apache.cxf:cxf-rt-rs-security-oauth2</exclude>
+        <exclude>org.apache.cxf*:*</exclude>
+        <exclude>org.apache.openejb*:*</exclude>
+        <exclude>org.apache.openjpa*:*</exclude>
+        <exclude>org.apache.openwebbeans*:*</exclude>
+        <exclude>org.apache.xbean*:*</exclude>
+        <exclude>org.apache.myfaces*:*</exclude>
+        <exclude>org.apache.tomcat*:*</exclude>
+        <exclude>org.hsqldb:*</exclude>
+        <exclude>org.jboss.*:*</exclude>
+        <exclude>org.eclipse*:*</exclude>
+        <exclude>org.codehaus*:*</exclude>
+        <exclude>com.sun*:*</exclude>
       </excludes>
     </dependencySet>
   </dependencySets>
